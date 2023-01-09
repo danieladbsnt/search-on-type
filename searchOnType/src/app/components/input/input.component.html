@@ -1,0 +1,12 @@
+<!-- cuando clickado el btn que se ponga la clase succes -->
+<button (click)="getSpainData()" type="button" class=" btn btn-primary">España</button>
+<button (click)="getUkData()" type="button" class="btn btn-primary">Reino Unido</button>
+<button (click)="getPortugalData()" type="button" class="btn btn-primary">Portugal</button>
+<mat-form-field class="example-form-field">
+    <input (input)="searching()" [(ngModel)]="termino" matInput type="text">
+  </mat-form-field>
+<ul>
+    <li *ngFor="let uni of universities">
+        {{uni.nombre}}
+    </li>
+</ul>
