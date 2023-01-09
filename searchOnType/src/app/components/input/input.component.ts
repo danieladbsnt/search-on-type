@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { debounceTime, Subject } from 'rxjs';
 import { University } from 'src/app/interfaces/university';
 import { ServiceService } from 'src/app/services/service.service';
 
@@ -9,10 +8,13 @@ import { ServiceService } from 'src/app/services/service.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-universities!: University[];
-debouncer : Subject<string> = new Subject();
+isClicked: boolean = true;
+universities: University[] = []
 termino: string = '';
-  constructor(private service: ServiceService) { }
+btnClass: string = 'btn-primary'
+
+  constructor(private service: ServiceService,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -40,7 +42,7 @@ getPortugalData() {
 
 searching() {
   this.service.getDataTyping(this.termino.trim())
-    .subscribe(unis => this.universities =  unis
-    )
+    .subscribe(unis => this.universities = unis)
 }
+
 }
