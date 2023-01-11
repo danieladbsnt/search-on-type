@@ -1,11 +1,8 @@
 .example-form-field {
     width: 200px;
+    margin-left: 10px;
 }
 
-button:first-child {
-    margin-left: 15px;
-}
-
-button {
-    margin-right: 5px;
-}  
+mat-button-toggle-group {
+    margin-left: 12px;
+  }
