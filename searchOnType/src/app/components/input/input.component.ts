@@ -8,13 +8,10 @@ import { ServiceService } from 'src/app/services/service.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-isClicked: boolean = true;
 universities: University[] = []
 termino: string = '';
-btnClass: string = 'btn-primary'
 
-  constructor(private service: ServiceService,
-    ) { }
+  constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
   }
